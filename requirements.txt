@@ -1,5 +1,6 @@
+Flask
 numpy
 pandas
 scikit-learn
 joblib
-Flask
+gunicorn==20.1.0
