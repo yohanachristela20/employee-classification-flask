@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Retention Classification System</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="../static/action.js"></script>
+</head>
+<body>
+    <div class="container contact-form">
+        <form action="{{url_for('predict')}}" method="post">
+            <h2>Employee Retention Classification System</h2>
+           <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="JoiningYear" class="form-control" placeholder="Joining Year" value="" />
+                        <div class="required-message" id="joining-year-required">*2012-2018</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="PaymentTier" class="form-control" placeholder="Payment Tier" value="" />
+                        <div class="required-message" id="payment-required">*1-3</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Age" class="form-control" placeholder="Age" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="ExperienceInCurrentDomain" class="form-control" placeholder="Experience in Current Domain" value="" />
+                        <div class="required-message" id="experience-required">*0-7</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Gender_Male" class="form-control" placeholder="Gender_Male" value="" />
+                        <div class="required-message" id="gender-required">*0/1 0= No 1= Yes</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="EverBenched_Yes" class="form-control" placeholder="EverBenched_Yes" value="" />
+                        <div class="required-message" id="everbenched-required">*0/1 0= No 1= Yes</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Education_Masters" class="form-control" placeholder="Education_Masters" value="" />
+                        <div class="required-message" id="education-masters-required">*0/1 0= No 1= Yes</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Education_PHD" class="form-control" placeholder="Education_PHD" value="" />
+                        <div class="required-message" id="education-phd-required">*0/1 0= No 1= Yes</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="City_New_Delhi" class="form-control" placeholder="City_New_Delhi" value="" />
+                        <div class="required-message" id="city-required">*0/1 0= No 1= Yes</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="City_Pune" class="form-control" placeholder="City_Pune" value="" />
+                        <div class="required-message" id="city-required">*0/1 0= No 1= Yes</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="btnSubmit" class="btnContact" onclick="clearTextarea()" value="Check Result" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea id="text-pred" name="Text_Prediction" class="form-control text-prediction" rows="3" cols="50" readonly>{{prediction_text}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
